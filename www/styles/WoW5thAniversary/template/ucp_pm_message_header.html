@@ -1,0 +1,24 @@
+
+<table class="tablebg" width="100%" cellspacing="1" cellpadding="0">
+	<tr>
+		<td class="row1" align="{S_CONTENT_FLOW_BEGIN}">
+		<!-- IF TOTAL_MESSAGES -->
+		&nbsp;{PAGE_NUMBER}
+			<!-- IF FOLDER_MAX_MESSAGES neq 0 -->
+				&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b>/{FOLDER_MAX_MESSAGES} {L_MESSAGES} ({FOLDER_PERCENT}%) ]&nbsp;
+			<!-- ELSE -->
+				&nbsp;[ <b>{FOLDER_CUR_MESSAGES}</b> {L_MESSAGES} ]&nbsp;				
+			<!-- ENDIF -->
+		<!-- ENDIF -->
+
+		<!-- IF S_VIEW_MESSAGE -->
+			<span class="gensmall">
+			<!-- IF S_DISPLAY_HISTORY -->
+				<!-- IF U_VIEW_PREVIOUS_HISTORY --><a href="{U_VIEW_PREVIOUS_HISTORY}">{L_VIEW_PREVIOUS_HISTORY}</a> | <!-- ENDIF --><!-- IF U_VIEW_NEXT_HISTORY --><a href="{U_VIEW_NEXT_HISTORY}">{L_VIEW_NEXT_HISTORY}</a> | <!-- ENDIF -->
+			<!-- ENDIF --><a href="{U_PREVIOUS_PM}">{L_VIEW_PREVIOUS_PM}</a> | <a href="{U_NEXT_PM}">{L_VIEW_NEXT_PM}</a>&nbsp;
+			</span>
+		<!-- ENDIF -->
+		<span align="{S_CONTENT_FLOW_END}"><!-- INCLUDE pagination.html --></span>
+		</td>
+	</tr>
+</table>

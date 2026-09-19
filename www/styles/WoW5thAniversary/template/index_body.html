@@ -1,0 +1,83 @@
+<!-- INCLUDE overall_header.html -->
+
+	<!-- IF U_MCP -->
+		<div id="pageheader">
+			<p class="linkmcp">[ <a href="{U_MCP}">{L_MCP}</a> ]</p>
+		</div>
+
+		<br clear="all" /><br />
+	<!-- ENDIF -->
+	
+	<!-- INCLUDE forumlist_body.html -->
+	<br />
+  <div id="separador">
+	<!-- IF not S_IS_BOT -->
+	<span class="gensmall"><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a></span>
+	<!-- ENDIF -->
+	<br clear="all" />
+
+	<!-- INCLUDE breadcrumbs.html -->
+  </div>
+
+	<br clear="all" />
+
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat"><!-- IF U_VIEWONLINE --><h4><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h4><!-- ELSE --><h4>{L_WHO_IS_ONLINE}</h4><!-- ENDIF --></td>
+	</tr>
+	<!-- IF S_DISPLAY_ONLINE_LIST -->
+	<tr>
+		<td class="row1" width="100%"><p class="genmed">&nbsp;<img align="absbottom" src="{T_THEME_PATH}/images/icon_pages.png" alt="{L_STATISTICS}" /> {TOTAL_POSTS} | {TOTAL_TOPICS} | {TOTAL_USERS} | {NEWEST_USER}</p>
+		<span class="genmed"><br /><img src="{T_THEME_PATH}/images/icon_ucp.png" />&nbsp;{LOGGED_IN_USER_LIST}</span><br /><br />
+	<!-- IF LEGEND --><b class="gensmall">{L_LEGEND} :: {LEGEND}</b><!-- ENDIF -->
+	<!-- IF S_DISPLAY_BIRTHDAY_LIST -->
+		<br /><br />
+		<img src="{T_THEME_PATH}/images/icon_faq.png" alt="{L_BIRTHDAYS}" /><b class="genmed">{L_BIRTHDAYS}</b>
+		<p class="genmed"><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <b>{BIRTHDAY_LIST}</b><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF --></p>
+	<!-- ENDIF -->
+		</td>
+	</tr>
+	<!-- ENDIF -->
+	</table>
+
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+	<br clear="all" />
+
+	<form method="post" action="{S_LOGIN_ACTION}">
+	
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<td class="cat" colspan="2"><h4><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></h4></td>
+	</tr>
+	<tr>
+		<td class="row1" align="right"><span class="genmed">{L_USERNAME}:</span> <input class="post" type="text" name="username" size="10" /></td>
+		<td class="row1" align="left"><span class="genmed"><input type="submit" class="btnmain" name="login" value="{L_LOGIN}" /></td>
+	</tr>
+	<tr>
+		<td class="row1" align="right"><span class="genmed">{L_PASSWORD}:</span> <input class="post" type="password" name="password" size="10" /></td>
+		<td class="row1" align="left"><span class="genmed"> <!-- IF S_AUTOLOGIN_ENABLED --><input type="checkbox" class="radio" name="autologin" />&nbsp;<span class="gensmall">{L_LOG_ME_IN}</span> <!-- ENDIF --></td>
+	</tr>
+	<tr>		
+	</tr>
+	</table>
+	{S_LOGIN_REDIRECT}
+	{S_FORM_TOKEN}
+	</form>
+<!-- ENDIF -->
+
+<br clear="all" />
+
+<table class="legend">
+<tr>
+	<td width="20" align="center">{FORUM_UNREAD_IMG}</td>
+	<td><span class="gensmall">{L_UNREAD_POSTS}</span></td>
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center">{FORUM_IMG}</td>
+	<td><span class="gensmall">{L_NO_UNREAD_POSTS}</span></td>	
+	<td>&nbsp;&nbsp;</td>
+	<td width="20" align="center">{FORUM_LOCKED_IMG}</td>
+	<td><span class="gensmall">{L_FORUM_LOCKED}</span></td>
+</tr>
+</table>
+
+<!-- INCLUDE overall_footer.html -->

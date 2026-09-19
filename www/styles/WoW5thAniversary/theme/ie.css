@@ -1,0 +1,19 @@
+input.radio {
+	border: 0px;
+	background: none;
+	vertical-align: middle;
+}
+
+.tablebg tr { background: non; }
+
+.row1 {
+	/*background: url("{T_THEME_PATH}/images/table_bg.jpg") top;*/
+}
+
+.row2 {
+	/*background: url("{T_THEME_PATH}/images/table_bg.jpg") top;*/
+}
+
+.row3 {
+	/*background: url("{T_THEME_PATH}/images/table_bg.jpg") top;*/
+}
