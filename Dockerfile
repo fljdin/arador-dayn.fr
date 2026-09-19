@@ -13,7 +13,10 @@ RUN docker-php-ext-configure gd --with-jpeg-dir=/usr/include/ \
 
 RUN rm -rf /var/cache/apk && mkdir -p /var/cache/apk
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
 COPY www /var/www
+RUN cd /var/www && /usr/local/bin/composer install
 RUN chown -R www-data:www-data /var/www
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf

@@ -99,6 +99,16 @@ require($phpbb_root_path . 'includes/constants.' . $phpEx);
 require($phpbb_root_path . 'includes/db/' . $dbms . '.' . $phpEx);
 require($phpbb_root_path . 'includes/utf/utf_tools.' . $phpEx);
 
+if (!function_exists('brevo_mail') && ($brevo_key = getenv('BREVO_API_KEY')) !== false && $brevo_key !== '')
+{
+	$brevo_file = $phpbb_root_path . 'includes/brevo/brevo_mail.' . $phpEx;
+	if (file_exists($brevo_file))
+	{
+		require_once($brevo_file);
+	}
+	unset($brevo_key, $brevo_file);
+}
+
 // NGINX Proxy Real IP
 if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
   $_SERVER['REMOTE_ADDR'] = $_SERVER['HTTP_X_FORWARDED_FOR'];
