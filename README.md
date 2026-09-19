@@ -4,6 +4,8 @@ Archive legacy phpbb in a container.
 
 ## Run
 
+Use `ghcr.io/fljdin/arador-dayn.fr:latest` or build it locally:
+
 ```sh
 docker build --tag local/arador-dayn:5.6-alpine .
 docker run -d -p 8080:8080 \
